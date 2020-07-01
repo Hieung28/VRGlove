@@ -23,7 +23,7 @@ import matplotlib.image as mpimg
 from timeit import default_timer as timer
 
 from tkinter import Tk, Text, TOP, BOTTOM, LEFT, RIGHT, END, X, Y, BOTH, W, NW, N, NE, E, CENTER, StringVar, messagebox
-from tkinter.ttk import Frame, Label, Entry, Button, OptionMenu
+from tkinter.ttk import Frame, Label, Entry, Button, OptionMenu, Style
 # from PIL import Image
 
 from sklearn.model_selection import train_test_split
@@ -121,7 +121,7 @@ class ThreadQuatProcessLeftHand(threading.Thread):
         self.serialPort = serialPort
         self.baudRate = baudRate
         # self.receiveQuatEnable = False
-        self.IsLeftConnect=false
+        
         
     # def changeSerialPort(self, serialPort):
     #     self.ser.close()
@@ -531,10 +531,10 @@ class GUI(Frame):
         # self.textPredictResult = Label(framePredict, text='N/A', font=("Arial", 50), foreground='red')
         # self.textPredictResult.pack(side=TOP, padx=5, pady=50)
 
-        labelTrainer = Label(framePredict, text='TRAINER')
-        labelTrainer.pack(side=TOP, padx=5, pady=5)
+        labelTrainer = Label(framePredict, text='TRAINER',style='My.TFrame')
+        labelTrainer.pack(side=TOP, padx=5, pady=100)
 
-        labelTrainingCharacter = Label(framePredict, text='Training character')
+        labelTrainingCharacter = Label(framePredict, text='Training character', )
         labelTrainingCharacter.pack(side=TOP, padx=5, pady=5)
 
         entryTrainingCharacter = Entry(framePredict, width=5, justify=CENTER)
@@ -632,10 +632,10 @@ class GUI(Frame):
         labelGraph = Label(frameGraph, text='JOINT ANGLES')
         labelGraph.pack(side=TOP, padx=5, pady=5)
 
-        buttonPredict = Button(framePredict, text='Single Predict', command=PredictCmd, width=15)
+        buttonPredict = Button(frameGraph, text='Single Predict', command=PredictCmd, width=15)
         buttonPredict.pack(side=BOTTOM, padx=5, pady=5)
 
-        buttonMultiplePredict= Button(framePredict, text='Multiple Predict', command=MultiplePredictCmd, width=15)
+        buttonMultiplePredict= Button(frameGraph, text='Multiple Predict', command=MultiplePredictCmd, width=15)
         buttonMultiplePredict.pack(side=BOTTOM, padx=5, pady=5)
         
 
@@ -654,7 +654,7 @@ class GUI(Frame):
                 self.y[i].append(0)
             self.line.append(ax.plot(self.x, self.y[i], color=self.colorList[i], lw=1)[0])
         #########################################################
-        frameMultiplePredict = Frame(self)
+        frameMultiplePredict = Frame(self,style='My.TFrame')
         frameMultiplePredict.pack(side=RIGHT, fill=BOTH)
 
         LabelMultiplePredict = Label(frameMultiplePredict, text='MULTIPLE PREDICT')
@@ -743,7 +743,7 @@ class GUI(Frame):
 if __name__ == '__main__':
     #threadQuatProcess = ThreadQuatProcess('/dev/rfcomm0'', 115200, 'trainingData.csv')
     #threadQuatProcess = ThreadQuatProcess('COM8', 115200, 'TrainingData.csv')
-    threadQuatProcessLeftHand = threadQuatProcessLeftHand('/dev/ttyACM0', 115200)
+    threadQuatProcessLeftHand = ThreadQuatProcessLeftHand('/dev/ttyACM0', 115200)
     threadCollectData = ThreadCollectData('trainingData.csv')
     threadQuatProcessRightHand = ThreadQuatProcessRightHand('COM8', 115200)
     #threadZMQPushIP = ThreadZMQPush('tcp://192.168.1.93:5600')
@@ -762,8 +762,8 @@ if __name__ == '__main__':
         threadCollectData.start()
         app = GUI(jointNumber)
         
-        #3app.run()
-        ROSUpdate()
+        app.run()
+        #ROSUpdate()
 
     except KeyboardInterrupt:
         threadQuatProcessRightHand.shutdown_flag.set()

@@ -45,12 +45,19 @@ fieldnames = ['forearm_carpal', 'carpal_hand', \
 'hand_pinky' , 'pinky_mc_pp' , 'pinky_pp_mp' , 'pinky_mp_dp', \
 'character']
 
-jointName = ['joint_R_forearm_carpal', 'joint_R_carpal_hand', \
-'joint_R_hand_thumb' , 'joint_R_thumb_tp_mc' , 'joint_R_thumb_mc_pp' , 'joint_R_thumb_pp_dp' , \
-'joint_R_hand_index' , 'joint_R_index_mc_pp' , 'joint_R_index_pp_mp' , 'joint_R_index_mp_dp' , \
-'joint_R_hand_middle', 'joint_R_middle_mc_pp', 'joint_R_middle_pp_mp', 'joint_R_middle_mp_dp', \
-'joint_R_hand_ring'  , 'joint_R_ring_mc_pp'  , 'joint_R_ring_pp_mp'  , 'joint_R_ring_mp_dp'  , \
-'joint_R_hand_pinky' , 'joint_R_pinky_mc_pp' , 'joint_R_pinky_pp_mp' , 'joint_R_pinky_mp_dp']
+fieldnames_twoHand= ['R_forearm_carpal', 'R_carpal_hand', \
+'R_hand_thumb' , 'R_thumb_tp_mc' , 'R_thumb_mc_pp' , 'R_thumb_pp_dp' , \
+'R_hand_index' , 'R_index_mc_pp' , 'R_index_pp_mp' , 'R_index_mp_dp' , \
+'R_hand_middle', 'R_middle_mc_pp', 'R_middle_pp_mp', 'R_middle_mp_dp', \
+'R_hand_ring'  , 'R_ring_mc_pp'  , 'R_ring_pp_mp'  , 'R_ring_mp_dp'  , \
+'R_hand_pinky' , 'R_pinky_mc_pp' , 'R_pinky_pp_mp' , 'R_pinky_mp_dp', \
+'L_forearm_carpal', 'L_carpal_hand', \
+'L_hand_thumb' , 'L_thumb_tp_mc' , 'L_thumb_mc_pp' , 'L_thumb_pp_dp' , \
+'L_hand_index' , 'L_index_mc_pp' , 'L_index_pp_mp' , 'L_index_mp_dp' , \
+'L_hand_middle', 'L_middle_mc_pp', 'L_middle_pp_mp', 'L_middle_mp_dp', \
+'L_hand_ring'  , 'L_ring_mc_pp'  , 'L_ring_pp_mp'  , 'L_ring_mp_dp'  , \
+'L_hand_pinky' , 'L_pinky_mc_pp' , 'L_pinky_pp_mp' , 'L_pinky_mp_dp', \
+'character']
 
 jointName = ['joint_R_forearm_carpal', 'joint_R_carpal_hand', \
 'joint_R_hand_thumb' , 'joint_R_thumb_tp_mc' , 'joint_R_thumb_mc_pp' , 'joint_R_thumb_pp_dp' , \
@@ -59,58 +66,54 @@ jointName = ['joint_R_forearm_carpal', 'joint_R_carpal_hand', \
 'joint_R_hand_ring'  , 'joint_R_ring_mc_pp'  , 'joint_R_ring_pp_mp'  , 'joint_R_ring_mp_dp'  , \
 'joint_R_hand_pinky' , 'joint_R_pinky_mc_pp' , 'joint_R_pinky_pp_mp' , 'joint_R_pinky_mp_dp']
 
-# jointAngle = [0.0, 0.0, \
-# 0.0, 0.0, 0.0, 0.0, \
-# 0.0, 0.0, 0.0, 0.0, \
-# 0.0, 0.0, 0.0, 0.0, \
-# 0.0, 0.0, 0.0, 0.0, \
-# 0.0, 0.0, 0.0, 0.0]
+jointName = ['joint_R_forearm_carpal', 'joint_R_carpal_hand', \
+'joint_R_hand_thumb' , 'joint_R_thumb_tp_mc' , 'joint_R_thumb_mc_pp' , 'joint_R_thumb_pp_dp' , \
+'joint_R_hand_index' , 'joint_R_index_mc_pp' , 'joint_R_index_pp_mp' , 'joint_R_index_mp_dp' , \
+'joint_R_hand_middle', 'joint_R_middle_mc_pp', 'joint_R_middle_pp_mp', 'joint_R_middle_mp_dp', \
+'joint_R_hand_ring'  , 'joint_R_ring_mc_pp'  , 'joint_R_ring_pp_mp'  , 'joint_R_ring_mp_dp'  , \
+'joint_R_hand_pinky' , 'joint_R_pinky_mc_pp' , 'joint_R_pinky_pp_mp' , 'joint_R_pinky_mp_dp']
 
-jointAngleRight=[0.0, 0.0, \
+
+jointAngle=[0.0, 0.0, \
 0.0, 0.0, 0.0, 0.0, \
 0.0, 0.0, 0.0, 0.0, \
 0.0, 0.0, 0.0, 0.0, \
 0.0, 0.0, 0.0, 0.0, \
 0.0, 0.0, 0.0, 0.0]
-
-jointAngleLeft=[0.0, 0.0, \
-0.0, 0.0, 0.0, 0.0, \
-0.0, 0.0, 0.0, 0.0, \
-0.0, 0.0, 0.0, 0.0, \
-0.0, 0.0, 0.0, 0.0, \
-0.0, 0.0, 0.0, 0.0]
-# jointAngle_1 = [-0.125, 0.117, 0.6, -0.963, 1.454, 0.33, 0.141, 0.841, 0.598, 0.598, \
-# -0.05, 0.97, 0.676, 0.676, -0.087, 0.962, 0.444, 0.444, -0.25, 0.743, \
-# 0.49, 0.49] #0
-
-# jointAngle_2 = [-0.039, 0.124, -0.187, -0.626, 1.205, 0.24, -0.118, \
-# 0.159, 0.23, 0.23, -0.381, 1.186, 0.762, 0.762, \
-# -0.226, 1.209, 0.835, 0.835, -0.377, 1.142, 0.57, 0.57] #1
-
-jointAngle=[-0.445, -0.281, 1.085, 0.145, 2.736, 0.013, 0.581, -0.004, 0.15, 0.15, 0.805, 0.441, 1.151, 1.151, -0.03, 0.787, 1.187, 1.187, -0.771, 1.652, 0.826, 0.826]
 
 timeConstant=0.5
 
-# ImageIndex = ['Images\\0.jpg' , 'Images\\1.jpg' , 'Images\\2.jpg' , 'Images\\3.jpg' , 'Images\\4.jpg', \
-# 'Images\\5.jpg' , 'Images\\6.jpg' , 'Images\\7.jpg' , 'Images\\8.jpg' , 'Images\\9.jpg','Images\\A.jpg', \
-# 'Images\\B.jpg' , 'Images\\C.jpg' , 'Images\\D.jpg' , 'Images\\Đ.jpg' , 'Images\\E.jpg' , 'Images\\G.jpg', \
-# 'Images\\H.jpg' , 'Images\\I.jpg' , 'Images\\K.jpg' , 'Images\\L.jpg' , 'Images\\M.jpg' , 'Images\\N.jpg' , 'Images\\O.jpg', \
-# 'Images\\P.jpg' , 'Images\\Q.jpg' , 'Images\\R.jpg' , 'Images\\S.jpg' , 'Images\    .jpg' , 'Images\\U.jpg' , 'Images\\V.jpg', \
-# 'Images\\X.jpg' , 'Images\\Y.jpg']
+ImageIndex = ['0.jpg' , '1.jpg' , '2.jpg' , '3.jpg' , '4.jpg', \
+'5.jpg' , '6.jpg' , '7.jpg' , '8.jpg' , '9.jpg','A.jpg', \
+'B.jpg' , 'C.jpg' , 'D.jpg' , 'Images\\Đ.jpg' , 'Images\\E.jpg' , 'Images\\G.jpg', \
+'H.jpg' , 'Images\\I.jpg' , 'K.jpg' , 'Images\\L.jpg' , 'Images\\M.jpg' , 'Images\\N.jpg' , 'O.jpg', \
+'P.jpg' , 'Q.jpg' , 'Images\\R.jpg' , 'Images\\S.jpg' , 'Images\    .jpg' , 'Images\\U.jpg' , 'Images\\V.jpg', \
+'X.jpg' , 'Y.jpg']
 #Create a dictionary with keys are elements in joinName
 jointDict = dict(zip(jointName, jointAngle))
 
 jointNumber = len(jointName)
 
+# characterList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', \
+# 'A', 'B', 'C', 'D', 'Đ', 'E', 'G', 'H', \
+# 'I', 'K', 'L', 'M', 'N', 'O', 'more', 'help', \
+# 'play', 'S', 'T', 'U', 'V', 'X', 'Y','F']
+
+# characterIndex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', \
+# '10', '11', '12', '13', '14', '15', '16', '17', \
+# '18', '19', '20', '21', '22', '23', '24', '25', \
+# '26', '27', '28', '29', '30', '31', '32', '33']
+
 characterList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', \
 'A', 'B', 'C', 'D', 'Đ', 'E', 'G', 'H', \
-'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', \
-'R', 'S', 'T', 'U', 'V', 'X', 'Y']
+'I', 'K', 'L', 'M', 'N', 'O', 'more', 'help', \
+'play']
 
 characterIndex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', \
 '10', '11', '12', '13', '14', '15', '16', '17', \
 '18', '19', '20', '21', '22', '23', '24', '25', \
-'26', '27', '28', '29', '30', '31', '32']
+'26']
+
 
 ####################################################################################################
 
@@ -120,6 +123,7 @@ class ThreadQuatProcessLeftHand(threading.Thread):
         self.shutdown_flag = threading.Event()
         self.serialPort = serialPort
         self.baudRate = baudRate
+        self.num=0.0
         # self.receiveQuatEnable = False
         
         
@@ -131,7 +135,7 @@ class ThreadQuatProcessLeftHand(threading.Thread):
     def run(self):
         global jointAngleLeft
         # while(1):
-        #     jointAngle=jointAngle    
+        #     jointAngleLeft=jointAngleLeft    
         try:
             with serial.Serial(self.serialPort, self.baudRate) as self.ser:
                 string = ''            
@@ -162,6 +166,9 @@ class ThreadQuatProcessLeftHand(threading.Thread):
                                             jointAngleLeft[joint] = round(roll, 3)
                                         elif axis == 'yaw':                                            
                                             jointAngleLeft[joint] = round(roll, 3)
+                                        
+                                            
+
                                 
                                 def copyAngle(destination, source):
                                     global jointAngleLeft
@@ -169,43 +176,152 @@ class ThreadQuatProcessLeftHand(threading.Thread):
 
                                 def scaleAngle(joint, offset, scale):
                                     global jointAngleLeft
-                                    jointAngleLeft[joint] = round(scale*(jointAngleLeft[joint]) + offset*3.1416/180, 3)
+                                    jointAngleLeft[joint] = round(scale*(jointAngleLeft[joint]) + offset, 3)
 
-                                calcAngle(joint_R_forearm_carpal, hand_wist, index_mc, 'yaw')
-                                calcAngle(joint_R_carpal_hand, hand_wist, index_mc, 'roll')
+                                def LimitAngle(joint, min,max):
+                                    global jointAngleLeft
+                                    if jointAngleLeft[joint] > max:
+                                        jointAngleLeft[joint]=max
+                                    if jointAngleLeft[joint] < min:
+                                        jointAngleLeft[joint] = min
 
-                                calcAngle(joint_R_hand_thumb , thumb_mc, index_mc, 'pitch')
-                                scaleAngle(joint_R_hand_thumb, -35, -3.5)
-                                calcAngle(joint_R_thumb_tp_mc, thumb_mc, index_mc, 'yaw')
-                                scaleAngle(joint_R_thumb_tp_mc, 0, 3.5)
-                                calcAngle(joint_R_thumb_mc_pp, thumb_mc, thumb_pp, 'roll')
-                                calcAngle(joint_R_thumb_pp_dp, thumb_pp, thumb_dp, 'roll')
-                                scaleAngle(joint_R_thumb_pp_dp, 0, 1.5)
-                                scaleAngle(joint_R_thumb_mc_pp, 0, 1.1)
+                                calcAngle(joint_L_forearm_carpal, hand_wist, index_mc, 'yaw')
 
-                                calcAngle(joint_R_hand_index , index_mc, index_pp, 'yaw')
-                                calcAngle(joint_R_index_mc_pp, index_mc, index_pp, 'roll')
-                                calcAngle(joint_R_index_pp_mp, index_pp, index_mp, 'roll')
-                                copyAngle(joint_R_index_mp_dp, joint_R_index_pp_mp)
+                                if jointAngleLeft[joint_L_forearm_carpal] > 0.39:
+                                    jointAngleLeft[joint_L_forearm_carpal] = 0.39
+                                if jointAngleLeft[joint_L_forearm_carpal] < -0.39:
+                                    jointAngleLeft[joint_L_forearm_carpal] = -0.39
+
+                                calcAngle(joint_L_carpal_hand, hand_wist, index_mc, 'roll')
+
+                                if jointAngleLeft[joint_L_carpal_hand] > 0.63:
+                                    jointAngleLeft[joint_L_carpal_hand] = 0.63
+                                if jointAngleLeft[joint_L_carpal_hand] < -0.63:
+                                    jointAngleLeft[joint_L_carpal_hand] = -0.63
+
+                                calcAngle(joint_L_hand_thumb , index_mc, thumb_mc, 'pitch')                                
+                                #scaleAngle(joint_L_hand_thumb, 0, 0)
+
+                                if jointAngleLeft[joint_L_hand_thumb] > 0.87:
+                                    jointAngleLeft[joint_L_hand_thumb] = 0.87
+                                if jointAngleLeft[joint_L_hand_thumb] < -0.7:
+                                    jointAngleLeft[joint_L_hand_thumb] = -0.7
+
+                                calcAngle(joint_L_thumb_tp_mc, index_mc, thumb_mc, 'yaw') #yaw
+                                #scaleAngle(joint_L_thumb_tp_mc, 0, 0) #3.5scale
+
+                                if jointAngleLeft[joint_L_thumb_tp_mc] > 0.90:
+                                    jointAngleLeft[joint_L_thumb_tp_mc] = 0.90
+                                if jointAngleLeft[joint_L_thumb_tp_mc] < -0.79:
+                                    jointAngleLeft[joint_L_thumb_tp_mc] = -0.79
+
+                                calcAngle(joint_L_thumb_mc_pp, thumb_mc, thumb_pp, 'roll')
+                                scaleAngle(joint_L_thumb_mc_pp, -1, 1.2)
+
+                                # if jointAngleLeft[joint_L_thumb_mc_pp] > 1.75:
+                                #     jointAngleLeft[joint_L_thumb_mc_pp] = 1.75
+                                # if jointAngleLeft[joint_L_thumb_mc_pp] < -0.39:
+                                #     jointAngleLeft[joint_L_thumb_mc_pp] = -0.39
+
+                                calcAngle(joint_L_thumb_pp_dp, thumb_pp, thumb_dp, 'roll')
+                                scaleAngle(joint_L_thumb_pp_dp, 0, 1)
+
+                                if jointAngleLeft[joint_L_thumb_pp_dp] > 1.75:
+                                    jointAngleLeft[joint_L_thumb_pp_dp] = 1.75
+                                if jointAngleLeft[joint_L_thumb_pp_dp] < -0.39:
+                                    jointAngleLeft[joint_L_thumb_pp_dp] = -0.39
+                                
+
+                                calcAngle(joint_L_hand_index , index_mc, index_pp, 'yaw')
+
+                                if jointAngleLeft[joint_L_hand_index] > 0.35:
+                                    jointAngleLeft[joint_L_hand_index] = 0.35
+                                if jointAngleLeft[joint_L_hand_index] < -0.16:
+                                    jointAngleLeft[joint_L_hand_index] = -0.16
+
+                                calcAngle(joint_L_index_mc_pp, index_mc, index_pp, 'roll')
+
+                                if jointAngleLeft[joint_L_index_mc_pp] > 1.75:
+                                    jointAngleLeft[joint_L_index_mc_pp] = 1.75
+                                if jointAngleLeft[joint_L_index_mc_pp] < -0.39:
+                                    jointAngleLeft[joint_L_index_mc_pp] = -0.39
+
+                                calcAngle(joint_L_index_pp_mp, index_pp, index_mp, 'roll')
+
+                                if jointAngleLeft[joint_L_index_pp_mp] > 1.75:
+                                    jointAngleLeft[joint_L_index_pp_mp] = 1.75
+                                if jointAngleLeft[joint_L_index_pp_mp] < -0.39:
+                                    jointAngleLeft[joint_L_index_pp_mp] = -0.39
+
+                                copyAngle(joint_L_index_mp_dp, joint_R_index_pp_mp)
 
                                 # calcAngle(joint_R_hand_middle, index_pp, index_mp, 'pitch') #
                                 # calcAngle(joint_R_middle_mc_pp, index_pp, index_mp, 'yaw') #
-                                calcAngle(joint_R_hand_middle , index_mc , middle_pp, 'yaw')
-                                calcAngle(joint_R_middle_mc_pp, index_mc , middle_pp, 'roll')
-                                calcAngle(joint_R_middle_pp_mp, middle_pp, middle_mp, 'roll')
-                                copyAngle(joint_R_middle_mp_dp, joint_R_middle_pp_mp)
+                                calcAngle(joint_L_hand_middle , index_mc , middle_pp, 'yaw')
 
-                                calcAngle(joint_R_hand_ring , index_mc, ring_pp, 'yaw')
-                                calcAngle(joint_R_ring_mc_pp, index_mc, ring_pp, 'roll')
-                                calcAngle(joint_R_ring_pp_mp, ring_pp , ring_mp, 'roll')
-                                copyAngle(joint_R_ring_mp_dp, joint_R_ring_pp_mp)
+                                if jointAngleLeft[joint_L_hand_middle] > 0.31:
+                                    jointAngleLeft[joint_L_hand_middle] = 0.31
+                                if jointAngleLeft[joint_L_hand_middle] < -0.31:
+                                    jointAngleLeft[joint_L_hand_middle] = -0.31
 
-                                calcAngle(joint_R_hand_pinky , index_mc, pinky_pp, 'yaw')
-                                calcAngle(joint_R_pinky_mc_pp, index_mc, pinky_pp, 'roll')
-                                calcAngle(joint_R_pinky_pp_mp, pinky_pp, pinky_mp, 'roll')
-                                copyAngle(joint_R_pinky_mp_dp, joint_R_pinky_pp_mp)
+                                calcAngle(joint_L_middle_mc_pp, index_mc , middle_pp, 'roll')
+
+                                if jointAngleLeft[joint_L_middle_mc_pp] > 1.75:
+                                    jointAngleLeft[joint_L_middle_mc_pp] = 1.75
+                                if jointAngleLeft[joint_L_middle_mc_pp] < -0.39:
+                                    jointAngleLeft[joint_L_middle_mc_pp] = -0.39
+
+                                calcAngle(joint_L_middle_pp_mp, middle_pp, middle_mp, 'roll')
+
+                                if jointAngleLeft[joint_L_middle_pp_mp] > 1.75:
+                                    jointAngleLeft[joint_L_middle_pp_mp] = 1.75
+                                if jointAngleLeft[joint_L_middle_pp_mp] < -0.39:
+                                    jointAngleLeft[joint_L_middle_pp_mp] = -0.39
+
+                                copyAngle(joint_L_middle_mp_dp, joint_L_middle_pp_mp)
+
+                                if jointAngleLeft[joint_L_middle_mp_dp] > 1.75:
+                                    jointAngleLeft[joint_L_middle_mp_dp] = 1.75
+                                if jointAngleLeft[joint_L_middle_mp_dp] < -0.39:
+                                    jointAngleLeft[joint_L_middle_mp_dp] = -0.39
+
+                                calcAngle(joint_L_hand_ring , index_mc, ring_pp, 'yaw')
+                                LimitAngle(joint_L_hand_ring,-0.35,0.16 )
+
+                                calcAngle(joint_L_ring_mc_pp, index_mc, ring_pp, 'roll')
+                                LimitAngle(joint_L_ring_mc_pp, -0.39,1.75)
+
+                                calcAngle(joint_L_ring_pp_mp, ring_pp , ring_mp, 'roll')
+                                LimitAngle(joint_L_ring_pp_mp, -0.39, 1.75)
+
+                                copyAngle(joint_L_ring_mp_dp, joint_R_ring_pp_mp)
+
+                                calcAngle(joint_L_hand_pinky , index_mc, pinky_pp, 'yaw')
+                                LimitAngle(joint_L_hand_pinky, -0.35, 0.16)
+
+                                calcAngle(joint_L_pinky_mc_pp, index_mc, pinky_pp, 'roll')
+                                LimitAngle(joint_L_pinky_mc_pp, -0.39, 1.75)
+
+                                calcAngle(joint_L_pinky_pp_mp, pinky_pp, pinky_mp, 'roll')
+                                LimitAngle(joint_L_pinky_pp_mp, -0.39, 1.75)
+
+                                copyAngle(joint_L_pinky_mp_dp, joint_L_pinky_pp_mp)
+
+                                for angle in jointAngleLeft:
+                                    if angle == 0.0:
+                                        self.num=self.num+1
+                                if self.num >=3:
+                                    print(jointAngleLeft)
+                                    print("0")
+                                    messagebox.showerror("Error")
+                                    
+                                    self.shutdown_flag.set()
+                                self.num = 0
+                                        
 
                                 print(jointAngleLeft)
+                                print("Left")
+                                
 
                             updateAngle()
         except:
@@ -220,7 +336,7 @@ class ThreadQuatProcessRightHand(threading.Thread):
             self.shutdown_flag = threading.Event()
             self.serialPort = serialPort
             self.baudRate = baudRate
-                
+            self.num=0
         
     # def changeSerialPort(self, serialPort):
     #     self.ser.close()
@@ -268,43 +384,64 @@ class ThreadQuatProcessRightHand(threading.Thread):
 
                                 def scaleAngle(joint, offset, scale):
                                     global jointAngleRight
-                                    jointAngleRight[joint] = round(scale*(jointAngleRight[joint]) + offset*3.1416/180, 3)
+                                    jointAngleRight[joint] = round(scale*(jointAngleRight[joint]) + offset, 3)
 
                                 calcAngle(joint_R_forearm_carpal, hand_wist, index_mc, 'yaw')
                                 calcAngle(joint_R_carpal_hand, hand_wist, index_mc, 'roll')
 
                                 calcAngle(joint_R_hand_thumb , thumb_mc, index_mc, 'pitch')
-                                scaleAngle(joint_R_hand_thumb, -35, -3.5)
+                                scaleAngle(joint_R_hand_thumb, 0, 1.1)
                                 calcAngle(joint_R_thumb_tp_mc, thumb_mc, index_mc, 'yaw')
-                                scaleAngle(joint_R_thumb_tp_mc, 0, 3.5)
+                                scaleAngle(joint_R_thumb_tp_mc, 0, 1)
                                 calcAngle(joint_R_thumb_mc_pp, thumb_mc, thumb_pp, 'roll')
+                                scaleAngle(joint_R_thumb_mc_pp, 1.5, 0.7) #
+                                
+
                                 calcAngle(joint_R_thumb_pp_dp, thumb_pp, thumb_dp, 'roll')
-                                scaleAngle(joint_R_thumb_pp_dp, 0, 1.5)
-                                scaleAngle(joint_R_thumb_mc_pp, 0, 1.1)
+                                scaleAngle(joint_R_thumb_pp_dp, 0, 2)
+                              
 
                                 calcAngle(joint_R_hand_index , index_mc, index_pp, 'yaw')
+                                scaleAngle(joint_R_hand_index,0,0.6)
                                 calcAngle(joint_R_index_mc_pp, index_mc, index_pp, 'roll')
                                 calcAngle(joint_R_index_pp_mp, index_pp, index_mp, 'roll')
                                 copyAngle(joint_R_index_mp_dp, joint_R_index_pp_mp)
 
-                                # calcAngle(joint_R_hand_middle, index_pp, index_mp, 'pitch') #
-                                # calcAngle(joint_R_middle_mc_pp, index_pp, index_mp, 'yaw') #
                                 calcAngle(joint_R_hand_middle , index_mc , middle_pp, 'yaw')
+                                scaleAngle(joint_R_hand_middle,0,0.6)
                                 calcAngle(joint_R_middle_mc_pp, index_mc , middle_pp, 'roll')
                                 calcAngle(joint_R_middle_pp_mp, middle_pp, middle_mp, 'roll')
                                 copyAngle(joint_R_middle_mp_dp, joint_R_middle_pp_mp)
 
                                 calcAngle(joint_R_hand_ring , index_mc, ring_pp, 'yaw')
+                                scaleAngle(joint_R_hand_ring,0,0.6)
                                 calcAngle(joint_R_ring_mc_pp, index_mc, ring_pp, 'roll')
                                 calcAngle(joint_R_ring_pp_mp, ring_pp , ring_mp, 'roll')
                                 copyAngle(joint_R_ring_mp_dp, joint_R_ring_pp_mp)
 
                                 calcAngle(joint_R_hand_pinky , index_mc, pinky_pp, 'yaw')
+                                scaleAngle(joint_R_hand_pinky,0,0.6)
                                 calcAngle(joint_R_pinky_mc_pp, index_mc, pinky_pp, 'roll')
                                 calcAngle(joint_R_pinky_pp_mp, pinky_pp, pinky_mp, 'roll')
                                 copyAngle(joint_R_pinky_mp_dp, joint_R_pinky_pp_mp)
 
+                                for angle in jointAngleRight:
+                                    if angle == 0.0:
+                                        self.num=self.num+1
+                                if self.num >=3:
+                                    print(jointAngleRight)
+                                    print("0")
+
+                                    messagebox.showerror("Error")
+                                   
+                                    self.shutdown_flag.set()
+                                   
+                                self.num = 0
+                                        
+
                                 print(jointAngleRight)
+                                print("right")
+                                
 
                             updateAngle()
         except:
@@ -317,24 +454,42 @@ class ThreadCollectData(threading.Thread):
         threading.Thread.__init__(self)
         self.shutdown_flag=threading.Event()
         self.csvFilename = csvFilename
-        self.trainingCharacter = '5'
+        self.trainingCharacter = '2'
         self.collectSampleEnable = False
         self.sampleCount = 0
+        self.count=0
     def run(self):                
         with open(self.csvFilename, mode='a') as trainerFile:
+            global fieldnames_twoHand
             global fieldnames
             global jointAngle
             global jointAngleRight
             global jointAngleLeft
-            writer = csv.DictWriter(trainerFile, fieldnames=fieldnames)
+            writer = csv.DictWriter(trainerFile, fieldnames=fieldnames_twoHand)
             while not self.shutdown_flag.is_set():               
                 if(self.collectSampleEnable==True):
-                    jointAngle=joint=jointRight+jointAngleLeft
-                    newRow = dict(zip(fieldnames, jointAngle))
-                    newRow.update({'character':self.trainingCharacter})
-                    writer.writerow(newRow)
-                    self.sampleCount += 1
-                    print('Sample count: ' + str(self.sampleCount))
+                    jointAngle=jointAngleRight+jointAngleLeft
+                    for angle in jointAngle:
+                        if angle == 0.0:
+                            self.count =self.count+1
+                    if self.count >=4:
+                        print(jointAngle)
+                        print("2 hand")
+                        messagebox.showerror("Error")
+                    else:
+                       print(jointAngle)
+                       newRow = dict(zip(fieldnames_twoHand, jointAngle))
+                       newRow.update({'character':self.trainingCharacter})
+                       writer.writerow(newRow)
+                       self.sampleCount += 1
+                       print('Sample count: ' + str(self.sampleCount))
+                       time.sleep(0.05)
+                    self.count=0
+
+                    
+                   
+                    
+                   
 
                 
 
@@ -373,14 +528,14 @@ def ROSUpdate():
     pub = rospy.Publisher('joint_states', JointState, queue_size = 10)
     #rospy.init_node('display_robot_state', anonymous = True)
     rate = rospy.Rate(100)
-    global jointAngle
+    global jointAngleRight
     while not rospy.is_shutdown():
         hello_str = JointState()
         hello_str.header = Header()
         hello_str.header.stamp = rospy.Time.now()
         hello_str.name = list(jointDict.keys())
-        hello_str.position = jointAngle
-        print(hello_str.position)
+        hello_str.position = jointAngleRight
+        #print(hello_str.position)
         hello_str.velocity = []
         hello_str.effort = []
         pub.publish(hello_str)
@@ -398,17 +553,18 @@ def ROSUpdate():
 #         self.predictEnable = True        
 #         self.MultiplePredictEnable = False
 #         self.timeConstant=timeConstant
+#         self.Count=0
 
 #     def run(self):
 #         while not self.shutdown_flag.is_set() and self.MultiplePredictEnable:
 #             if self.predictEnable:
-#                 global jointAngle
+#                 global jointAngleRight
 #                 global characterList                
-#                 temp = np.array(jointAngle).reshape(1, -1)
+#                 temp = np.array(jointAngleRight).reshape(1, -1)
 #                 yPredict = self.loadedModel.predict(temp)
 #                 self.predictResult = characterList[int(yPredict)]        
 #                 app.predictResult.insert(END, self.predictResult)        
-#                 # print('Predict result: ' + str(self.predictResult))
+#                 print('Predict result: ' + str(self.predictResult))
 #                 time.sleep(self.timeConstant)
 
 ####################################################################################################
@@ -416,28 +572,35 @@ class ThreadPredict(threading.Thread):
     def __init__(self,modelFile):
         threading.Thread.__init__(self)
         self.shutdown_flag=threading.Event()
-        self.json_file=open('model.json', 'r')
+        self.modelFile=modelFile
+        self.json_file=open('twohandModel.json', 'r')
         self.loaded_model_json = self.json_file.read()
         self.json_file.close()
         self.load_model=model_from_json(self.loaded_model_json)
         self.load_model.load_weights(modelFile)
         self.load_model.compile(loss=keras.losses.categorical_crossentropy,
-              optimizer=keras.optimizers.SGD(lr=0.1),
+              optimizer=keras.optimizers.SGD(lr=0.01),
               metrics=['accuracy'])
         self.predictResult = 'N/A'
         self.predictEnable = True        
         self.MultiplePredictEnable = False
         self.timeConstant=timeConstant
+        self.Count=0
     def run(self):
         while not self.shutdown_flag.is_set() and self.MultiplePredictEnable:
             if self.predictEnable:
+                global jointAngleRight
+                global jointAngleLeft
                 global jointAngle
                 global characterList
+                jointAngle=jointAngleRight+jointAngleLeft             
+                self.Count=self.Count+1
                 temp = np.array(jointAngle).reshape(1, -1)
                 y_array=self.load_model.predict(temp)
                 index=np.argmax(y_array)
                 self.predictResult=characterList[int(index)]
-                app.predictResult.insert(END, self.predictResult)
+                print(self.predictResult)
+                app.predictResult.insert(END, self.predictResult+" ")
                 time.sleep(self.timeConstant)        
 
 
@@ -539,7 +702,7 @@ class GUI(Frame):
 
         entryTrainingCharacter = Entry(framePredict, width=5, justify=CENTER)
         entryTrainingCharacter.pack(side=TOP, padx=5, pady=5)
-        entryTrainingCharacter.insert(END, '5')
+        entryTrainingCharacter.insert(END, '2')
 
         labelSampleCount = Label(framePredict, text='Sample count')
         labelSampleCount.pack(side=TOP, padx=5, pady=5)
@@ -591,6 +754,8 @@ class GUI(Frame):
             global threadPredict                
             if threadPredict.predictEnable and not threadPredict.MultiplePredictEnable:
                 start=timer()
+                jointAngle=jointAngleRight+jointAngleLeft 
+                threadPredict.Count=threadPredict.Count+1
                 temp = np.array(jointAngle).reshape(1, -1)
                 yPredict = threadPredict.loadedModel.predict(temp)
                 img=mpimg.imread(ImageIndex[int(yPredict)])
@@ -599,6 +764,9 @@ class GUI(Frame):
                 end=timer()
                 predictTime=end-start
                 predictTime=round(predictTime,3)
+          
+
+
                 #self.textPredictResult.configure(text=predictTime)
             else:
                 messagebox.showwarning("Infor", "Another process is running")
@@ -616,8 +784,8 @@ class GUI(Frame):
                 else:
                     threadPredict.MultiplePredictEnable = False
                     buttonMultiplePredict.configure(text='Multiple Predict')
-                    threadPredict = ThreadPredict('finalizedModel.sav')
-
+                    #threadPredict = ThreadPredict('finalizedModel.sav')
+                    threadPredict = ThreadPredict('newModel.h5')
         
        
         
@@ -719,9 +887,9 @@ class GUI(Frame):
         
     def updateGraph(self, i):
         for i in range(jointNumber):
-            global jointAngle
+            global jointAngleRight
             self.y[i].pop(0)
-            self.y[i].append(jointAngle[i]*180.0/3.1416)
+            self.y[i].append(jointAngleRight[i]*180.0/3.1416)
             # self.y[i].append(randint(-90, 90))
             self.line[i].set_ydata(self.y[i])
         return self.line[i],
@@ -743,14 +911,14 @@ class GUI(Frame):
 if __name__ == '__main__':
     #threadQuatProcess = ThreadQuatProcess('/dev/rfcomm0'', 115200, 'trainingData.csv')
     #threadQuatProcess = ThreadQuatProcess('COM8', 115200, 'TrainingData.csv')
-    threadQuatProcessLeftHand = ThreadQuatProcessLeftHand('/dev/ttyACM0', 115200)
-    threadCollectData = ThreadCollectData('trainingData.csv')
-    threadQuatProcessRightHand = ThreadQuatProcessRightHand('COM8', 115200)
+    threadQuatProcessRightHand = ThreadQuatProcessRightHand('/dev/ttyACM0', 115200)
+    threadCollectData = ThreadCollectData('twoHandData.csv')
+    threadQuatProcessLeftHand = ThreadQuatProcessLeftHand('/dev/ttyACM1', 115200)
     #threadZMQPushIP = ThreadZMQPush('tcp://192.168.1.93:5600')
     # threadZMQPushLocal = ThreadZMQPush('tcp://127.0.0.1:5600')
     #threadPredict = ThreadPredict('finalizedModel.sav')
-    threadPredict = ThreadPredict('model.h5')
-    threadTrainingModel = ThreadTrainingModel('finalizedModel.sav', 'TrainingData.csv')
+    threadPredict = ThreadPredict('twohandModel.h5')
+    threadTrainingModel = ThreadTrainingModel('finalizedModel.sav', 'newTrainingData.csv')
     
     try:
         threadQuatProcessLeftHand.start()

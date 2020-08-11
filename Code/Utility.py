@@ -26,6 +26,13 @@ joint_R_hand_middle = 10; joint_R_middle_mc_pp = 11; joint_R_middle_pp_mp = 12; 
 joint_R_hand_ring   = 14; joint_R_ring_mc_pp   = 15; joint_R_ring_pp_mp   = 16; joint_R_ring_mp_dp   = 17
 joint_R_hand_pinky  = 18; joint_R_pinky_mc_pp  = 19; joint_R_pinky_pp_mp  = 20; joint_R_pinky_mp_dp  = 21
 
+joint_L_forearm_carpal = 0; joint_L_carpal_hand = 1
+joint_L_hand_thumb  =  2; joint_L_thumb_tp_mc  =  3; joint_L_thumb_mc_pp  =  4; joint_L_thumb_pp_dp  =  5
+joint_L_hand_index  =  6; joint_L_index_mc_pp  =  7; joint_L_index_pp_mp  =  8; joint_L_index_mp_dp  =  9
+joint_L_hand_middle = 10; joint_L_middle_mc_pp = 11; joint_L_middle_pp_mp = 12; joint_L_middle_mp_dp = 13
+joint_L_hand_ring   = 14; joint_L_ring_mc_pp   = 15; joint_L_ring_pp_mp   = 16; joint_L_ring_mp_dp   = 17
+joint_L_hand_pinky  = 18; joint_L_pinky_mc_pp  = 19; joint_L_pinky_pp_mp  = 20; joint_L_pinky_mp_dp  = 21
+
 packet_size_dict = {PACKET_TYPE_QUAT: FIX_HEADER_DATA_SIZE+(1+NUM_IMU)+4*4*NUM_IMU}
 
 def parse_packet(packet_type, packet):

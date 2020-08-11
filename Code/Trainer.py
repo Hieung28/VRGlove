@@ -28,7 +28,7 @@ import joblib
 # print("Generating done. Time elapsed:", end-start, " seconds")
 
 #acquiring data from external csv file gathered from data glove
-myData = np.genfromtxt('E:/DATN/Code/trainingData.csv', delimiter=',')
+myData = np.genfromtxt('CombinedHandData.csv', delimiter=',')
 
 
 #splitting data for training
@@ -59,7 +59,7 @@ print("Training done. Time elapsed:", end-start, " seconds")
 print("Testing...")
 #Y_value=classif.predict(X_test)
 #print(Y_value)
-X_valid=myData[35,0:myData.shape[1]-1]
+X_valid=myData[22318,0:myData.shape[1]-1]
 X_valid=X_valid.reshape(1,-1)
 print(X_valid)
 y_valid=classif.predict(X_valid)

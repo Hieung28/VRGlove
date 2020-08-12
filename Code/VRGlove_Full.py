@@ -83,12 +83,7 @@ jointAngle=[0.0, 0.0, \
 
 timeConstant=0.5
 
-ImageIndex = ['0.jpg' , '1.jpg' , '2.jpg' , '3.jpg' , '4.jpg', \
-'5.jpg' , '6.jpg' , '7.jpg' , '8.jpg' , '9.jpg','A.jpg', \
-'B.jpg' , 'C.jpg' , 'D.jpg' , 'Images\\Đ.jpg' , 'Images\\E.jpg' , 'Images\\G.jpg', \
-'H.jpg' , 'Images\\I.jpg' , 'K.jpg' , 'Images\\L.jpg' , 'Images\\M.jpg' , 'Images\\N.jpg' , 'O.jpg', \
-'P.jpg' , 'Q.jpg' , 'Images\\R.jpg' , 'Images\\S.jpg' , 'Images\    .jpg' , 'Images\\U.jpg' , 'Images\\V.jpg', \
-'X.jpg' , 'Y.jpg']
+
 #Create a dictionary with keys are elements in joinName
 jointDict = dict(zip(jointName, jointAngle))
 
@@ -114,7 +109,11 @@ characterIndex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', \
 '18', '19', '20', '21', '22', '23', '24', '25', \
 '26']
 
-
+ImageIndex = ['Images\\0.jpg' , 'Images\\1.jpg' , 'Images\\2.jpg' , 'Images\\3.jpg' , 'Images\\4.jpg', \
+'Images\\5.jpg' , 'Images\\6.jpg' , 'Images\\7.jpg' , 'Images\\8.jpg' , 'Images\\9.jpg','Images\\A.jpg', \
+'Images\\B.jpg' , 'Images\\C.jpg' , 'Images\\D.jpg' , 'Images\\Đ.jpg' , 'Images\\E.jpg' , 'Images\\G.jpg', \
+'Images\\H.jpg' , 'Images\\I.jpg' , 'Images\\K.jpg' , 'Images\\L.jpg' , 'Images\\M.jpg' , 'Images\\N.jpg' , 'O.jpg', \
+'Images\\P.jpg' , 'Images\\Q.jpg' , ]
 ####################################################################################################
 
 class ThreadQuatProcessLeftHand(threading.Thread):
@@ -133,9 +132,7 @@ class ThreadQuatProcessLeftHand(threading.Thread):
     #     self.seor = serial.Serial(self.serialPort, self.baudRate)
 
     def run(self):
-        global jointAngleLeft
-        # while(1):
-        #     jointAngleLeft=jointAngleLeft    
+       
         try:
             with serial.Serial(self.serialPort, self.baudRate) as self.ser:
                 string = ''            
@@ -615,7 +612,7 @@ class ThreadTrainingModel(threading.Thread):
 
     def train(self):
         if not self.shutdown_flag.is_set():
-            trainingData = np.genfromtxt(self.trainingDataFile, delimiter=',')
+            myData = np.genfromtxt(self.trainingDataFile, delimiter=',')
             # Splitting data for training
             X = trainingData[:, 0:trainingData.shape[1]-1]
             # Splitting labels for training
@@ -632,21 +629,53 @@ class ThreadTrainingModel(threading.Thread):
                                             tol=1e-4,
                                             shrinking=True,
                                             gamma='scale'))
-            # Begin training and testing
-            print('\nTraining...')
-            start = time.time()
-            classif.fit(X_train, Y_train)
-            end = time.time()
-            self.timeElapsed = format((end - start)*1000.0, '.2f')
-            print('Training done! Time elapsed:', format((end - start)*1000.0, '.2f'), 'ms')
-            print('Testing...')
-            self.trainScore = classif.score(X_test, Y_test)
-            self.trainScore = format(self.trainScore*100, '.2f')
-            print('Testing done! Training accuracy:', self.trainScore, '%')
-            # Save model to disk
-            print('Saving model to disk under name:', self.modelFile, '...')
-            joblib.dump(classif, self.modelFile)
-            print('Saving done!\n')
+            #splitting data for training
+            X = myData[:, 0:myData.shape[1]-1]
+
+            #splitting labels for training
+            y = myData[:, -1]
+
+            #Splitting data in to a training set and a test set to see the accuracy
+            X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.33,
+                                                    random_state=0)
+
+            num_classes=27
+
+            #  convert class vectors to binary class matrices
+            y_train = keras.utils.to_categorical(y_train, num_classes)
+            y_test = keras.utils.to_categorical(y_test, num_classes)
+            print(y_train)
+            model = Sequential()
+            model.add(Dense(256,input_shape=(44,), activation='relu'))
+            model.add(Dense(256, activation='relu'))
+            model.add(Dense(num_classes, activation='softmax'))
+
+            #los,metric
+            model.compile(loss=keras.losses.categorical_crossentropy,
+                              optimizer=keras.optimizers.SGD(lr=0.01),
+                                          metrics=['accuracy'])
+
+            history=model.fit(X_train, y_train, batch_size=512, epochs = 40)    
+            score = model.evaluate(X_test, y_test, verbose=0)
+            print('Test loss: %.4f'% score[0])
+            print('Test accuracy %.4f'% score[1])   
+
+            X_valid=X[28001,0:X.shape[1]].reshape(1,-1)
+            print(X_valid)
+            Y_valid=model.predict(X_valid)
+            print(Y_valid)
+            lang_index = numpy.argmax(Y_valid)
+            print(lang_index)
+            # load json and create model
+            model_json = model.to_json()
+            with open("twohandModel.json", "w") as json_file:
+            json_file.write(model_json)
+            # serialize weights to HDF5
+            model.save_weights(self.modelFile)
+            print("Saved model to disk")
+
+
 
 ####################################################################################################
 
@@ -785,7 +814,7 @@ class GUI(Frame):
                     threadPredict.MultiplePredictEnable = False
                     buttonMultiplePredict.configure(text='Multiple Predict')
                     #threadPredict = ThreadPredict('finalizedModel.sav')
-                    threadPredict = ThreadPredict('newModel.h5')
+                    threadPredict = ThreadPredict('twoHandModel.h5')
         
        
         
@@ -909,16 +938,14 @@ class GUI(Frame):
 ####################################################################################################
 
 if __name__ == '__main__':
-    #threadQuatProcess = ThreadQuatProcess('/dev/rfcomm0'', 115200, 'trainingData.csv')
-    #threadQuatProcess = ThreadQuatProcess('COM8', 115200, 'TrainingData.csv')
+   
     threadQuatProcessRightHand = ThreadQuatProcessRightHand('/dev/ttyACM0', 115200)
-    threadCollectData = ThreadCollectData('twoHandData.csv')
     threadQuatProcessLeftHand = ThreadQuatProcessLeftHand('/dev/ttyACM1', 115200)
-    #threadZMQPushIP = ThreadZMQPush('tcp://192.168.1.93:5600')
-    # threadZMQPushLocal = ThreadZMQPush('tcp://127.0.0.1:5600')
-    #threadPredict = ThreadPredict('finalizedModel.sav')
+    threadCollectData = ThreadCollectData('CombinedHandData.csv')
     threadPredict = ThreadPredict('twohandModel.h5')
-    threadTrainingModel = ThreadTrainingModel('finalizedModel.sav', 'newTrainingData.csv')
+    threadTrainingModel = ThreadTrainingModel('twohandModel.h5', 'CombinedHandData.csv')
+     #threadZMQPushIP = ThreadZMQPush('tcp://192.168.1.93:5600')
+    # threadZMQPushLocal = ThreadZMQPush('tcp://127.0.0.1:5600')
     
     try:
         threadQuatProcessLeftHand.start()
